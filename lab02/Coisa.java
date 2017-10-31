@@ -1,9 +1,18 @@
 package lp2.lab02;
 
+/**
+* A classe Coisa implementa testes de uso simples das classes
+* Disciplina, ContaCantina, ContaLaboratorio e Saude.
+*
+* @author  Diego Alves Gama
+* @version 1.0
+* @since   26/10/2017 
+*/
+
 public class Coisa {
 
 	public static void main(String[] args) {
-		
+
 		ContaLaboratorio contaLCC2 = new ContaLaboratorio("LCC2");
 		contaLCC2.consomeEspaco(1999);
 		System.out.println(contaLCC2.atingiuCota());
@@ -33,12 +42,15 @@ public class Coisa {
 		System.out.println(saude.geral());
 		saude.defineSaudeMental("boa");
 		saude.defineSaudeFisica("boa");
+		saude.definirEmoji(":D");
 		System.out.println(saude.geral());
 		saude.defineSaudeMental("fraca");
 		saude.defineSaudeFisica("fraca");
+		saude.definirEmoji(";-;");
 		System.out.println(saude.geral());
 		saude.defineSaudeMental("boa");
 		saude.defineSaudeFisica("fraca");
+		saude.definirEmoji(":/");
 		System.out.println(saude.geral());
 
 	}
