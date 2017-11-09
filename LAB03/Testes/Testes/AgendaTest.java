@@ -1,12 +1,12 @@
-package Testes;
+package testes;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import Lab03.Agenda;
-import Lab03.Contato;
+import lab03.Agenda;
+import lab03.Contato;
 
 public class AgendaTest {
 	
