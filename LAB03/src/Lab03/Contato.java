@@ -1,4 +1,4 @@
-package Lab03;
+package lab03;
 
 public class Contato {
 
@@ -7,12 +7,19 @@ public class Contato {
 	private String telefone;
 
 	public Contato() {
-		this.nome = null;
-		this.sobrenome = null;
-		this.telefone = null;
+		this.nome = "";
+		this.sobrenome = "";
+		this.telefone = "";
 	}
 
 	public Contato(String nome, String sobrenome, String telefone) {
+		if (nome.equals(null) || sobrenome.equals(null)) {
+			throw new NullPointerException();
+		}
+		if ((nome.equals("") || !(checkSpaces(nome))) || sobrenome.equals("") || !(checkSpaces(sobrenome))
+				|| telefone.equals("") || !(checkSpaces(telefone))) {
+			throw new IllegalArgumentException();
+		}
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.telefone = telefone;
@@ -42,6 +49,21 @@ public class Contato {
 		this.telefone = telefone;
 	}
 
+	public static boolean checkSpaces(String texto) {
+		int count = 0;
+
+		for (int i = 0; i < texto.length(); i++) {
+			if (texto.matches(" ")) {
+				count++;
+			}
+		}
+		if (count == texto.length()) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -68,10 +90,10 @@ public class Contato {
 			return false;
 		return true;
 	}
-	
+
 	@Override
 	public String toString() {
 		return nome + " " + sobrenome + " - " + telefone;
 	}
-	
+
 }
