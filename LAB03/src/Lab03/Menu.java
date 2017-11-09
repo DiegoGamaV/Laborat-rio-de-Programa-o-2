@@ -1,10 +1,18 @@
-package Lab03;
+package lab03;
 
 public class Menu {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	
+	public String opcoes() {
+		String menu = "(C)adastrar Contato \n"
+					+ "(L)istar Contato \n"
+					+ "(E)xibir Contato"
+					+ "(S)air";
+		return menu;
+	}
+	
+	public String selecao() {
+		String menu = "Opção>";
+		return menu;
 	}
 
 }
