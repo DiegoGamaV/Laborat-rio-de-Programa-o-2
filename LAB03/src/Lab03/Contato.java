@@ -5,6 +5,7 @@ public class Contato {
 	private String nome;
 	private String sobrenome;
 	private String telefone;
+	private int posicao;
 
 	public Contato() {
 		this.nome = "";
@@ -12,7 +13,7 @@ public class Contato {
 		this.telefone = "";
 	}
 
-	public Contato(String nome, String sobrenome, String telefone) {
+	public Contato(String nome, String sobrenome, String telefone, int posicao) {
 		if (nome.equals(null) || sobrenome.equals(null)) {
 			throw new NullPointerException();
 		}
@@ -23,6 +24,7 @@ public class Contato {
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.telefone = telefone;
+		this.posicao = posicao;
 	}
 
 	public String getNome() {
@@ -48,7 +50,11 @@ public class Contato {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-
+	
+	public String nomeCompleto() {
+		return this.nome + " " + this.sobrenome;
+	}
+	
 	public static boolean checkSpaces(String texto) {
 		int count = 0;
 
@@ -93,7 +99,7 @@ public class Contato {
 
 	@Override
 	public String toString() {
-		return nome + " " + sobrenome + " - " + telefone;
+		return posicao + " - " + nome + " " + sobrenome;
 	}
 
 }
