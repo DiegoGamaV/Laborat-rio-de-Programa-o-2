@@ -21,7 +21,7 @@ public class ContatoTest {
 
 	@Before
 	public void createContatos() {
-		contatoTest1 = new Contato("Mateus", "Gaudêncio", "2101-0000");
+		contatoTest1 = new Contato("Mateus", "Gaudêncio", "2101-0000", 1);
 		contatoTest2 = new Contato();
 		contatoTest2.setNome("Mateus");
 		contatoTest2.setSobrenome("Gaudêncio");
@@ -39,29 +39,29 @@ public class ContatoTest {
 	
 	@Test(expected = NullPointerException.class)
 	public void testContatoNullNome() {
-		Contato contatoNull = new Contato(null, "Sobrenome", "(83) 99999-0000");
+		Contato contatoNull = new Contato(null, "Sobrenome", "(83) 99999-0000", 1);
 	}
 	
 	@Test(expected = NullPointerException.class)
 	public void testContatoNullSobrenome() {
-		Contato contatoNull = new Contato("Nome", null, "(83) 99999-0000");
+		Contato contatoNull = new Contato("Nome", null, "(83) 99999-0000", 1);
 	}
 	
 	// Testes de Argumentos Inválidos
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testContatosNullNome() {
-		Contato contatoSpace = new Contato(" ", "Sobrenome", "(83) 99999-0000");
+		Contato contatoSpace = new Contato(" ", "Sobrenome", "(83) 99999-0000", 1);
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testContatosNullSobrenome() {
-		Contato contatoSpace = new Contato("Nome", " ", "(83) 99999-0000");
+		Contato contatoSpace = new Contato("Nome", " ", "(83) 99999-0000", 1);
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testContatosNullTelefone() {
-		Contato contatoSpace = new Contato("Nome", "Sobrenome", " ");
+		Contato contatoSpace = new Contato("Nome", "Sobrenome", " ", 1);
 	}
 	
 	@Test
