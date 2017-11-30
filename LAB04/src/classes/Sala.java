@@ -3,6 +3,10 @@ package classes;
 import java.util.ArrayList;
 import java.util.HashSet;
 
+/**
+ * @author Diego Gama
+ *	Classe que representa uma Sala de Aula.
+ */
 public class Sala {
 
 	private ArrayList<Aluno> cadastrados = new ArrayList<>();
@@ -12,9 +16,18 @@ public class Sala {
 	public Sala() {
 
 	}
-
+	/**
+	 * @method Método responsável por cadastrar um aluno na sala de áula
+	 * @param matricula
+	 * 			Matrícula do aluno
+	 * @param nome
+	 * 			Nome do aluno
+	 * @param curso
+	 * 			Curso do aluno
+	 * @return 
+	 */
 	public boolean cadastrarAluno(String matricula, String nome, String curso) {
-		if (consultarAluno(matricula) == null) {
+		if (consultarAluno(matricula) != null) {
 			Aluno aluno = new Aluno(matricula, nome, curso);
 			cadastrados.add(aluno);
 			return true;
@@ -79,10 +92,10 @@ public class Sala {
 		}
 	}
 	
-	public String imprimirParticipanes() {
+	public String imprimirParticipantes() {
 		String impressao = "Alunos:" + System.lineSeparator();
 		for (int i = 0; i < participantes.size(); i++) {
-			impressao = impressao + i + ". " + participantes.get(i).toString();
+			impressao = impressao + (i + 1) + ". " + participantes.get(i).toString() + System.lineSeparator();
 		}
 		return impressao;
 	}
