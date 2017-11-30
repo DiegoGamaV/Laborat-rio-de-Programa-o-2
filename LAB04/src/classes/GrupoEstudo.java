@@ -2,6 +2,11 @@ package classes;
 
 import java.util.HashSet;
 
+/**
+ * @author Diego Gama
+ *	Classe que representa um Grupo de Estudos.
+ */
+
 public class GrupoEstudo {
 
 	private String nome;
@@ -52,7 +57,7 @@ public class GrupoEstudo {
 
 	@Override
 	public String toString() {
-		String impressao = "Alunos do grupo" + this.nome + ":" + System.lineSeparator();
+		String impressao = "Alunos do grupo " + this.nome + ":" + System.lineSeparator();
 		for (Aluno aluno : alunos) {
 			impressao = impressao + "* " + aluno.toString() + System.lineSeparator();
 		}
